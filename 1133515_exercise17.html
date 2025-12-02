@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise 17</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background: #6EC6FF;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 900px;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    .header {
+        background: #A6D94F;
+        height: 120px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .middle {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .mid-box {
+        background: #09C9DD;
+        height: 80px;
+        border-radius: 5px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .foot-box {
+        background: #E4E4E4;
+        height: 70px;
+        border-radius: 5px;
+    }
+
+    @media (min-width: 720px) {
+        .middle {
+            flex-direction: row;
+        }
+
+        .mid-box {
+            flex: 1;
+        }
+
+        .footer {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header"></div>
+
+        <div class="middle">
+            <div class="mid-box"></div>
+            <div class="mid-box"></div>
+            <div class="mid-box"></div>
+        </div>
+
+        <div class="footer">
+            <div class="foot-box"></div>
+            <div class="foot-box"></div>
+            <div class="foot-box"></div>
+            <div class="foot-box"></div>
+        </div>
+    </div>
+</body>
+</html>
