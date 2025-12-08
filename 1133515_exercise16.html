@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise16</title>
+    
+    <style>
+        body {
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #ffb6c1;
+            margin: 20px;
+            align-items: center;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid #e9967a;
+            cursor: pointer;
+
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .square-1 {
+            transform-origin: left; 
+        }
+
+        .square-1:hover {
+            transform: scaleX(3.5); 
+        }
+
+        .square-2:hover {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1>Exercise 16</h1>
+
+    <div class="square square-1">1</div>
+    <div class="square square-2">2</div>
+
+</body>
+</html>
