@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Interactive Art</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+        canvas { display: block; margin: auto; }
+    </style>
+</head>
+<body>
+    <script>
+    // --- YOUR P5.JS CODE STARTS HERE ---
+    let easeX = 300, easeY = 300;
+    let easing = 0.08;
+    let palette = ["#FFDD0A", "#E00D1E", "#09388A", "#EAE8E9"];
+    let rippleSize = 0;
+
+    function setup() {
+      createCanvas(600, 600);
+    }
+
+    function draw() {
+      easeX += (mouseX - easeX) * easing;
+      easeY += (mouseY - easeY) * easing;
+
+      background(0);
+      stroke(0);
+      strokeWeight(15);
+
+      fill(palette[0]);
+      rect(20, 20, easeX - 20, easeY - 20);
+
+      fill(palette[1]);
+      rect(easeX, 20, 580 - easeX, easeY - 20);
+
+      fill(palette[2]);
+      rect(20, easeY, easeX - 20, 580 - easeY);
+
+      fill(palette[3]);
+      rect(easeX, easeY, 580 - easeX, 580 - easeY);
+
+      if (rippleSize > 0) {
+        noFill();
+        stroke(255, 150);
+        strokeWeight(5);
+        circle(easeX, easeY, rippleSize);
+        rippleSize += 10;
+        if (rippleSize > 500) rippleSize = 0;
+      }
+
+      noFill();
+      stroke(0);
+      strokeWeight(40);
+      rect(0, 0, width, height);
+    }
+
+    function mousePressed() {
+      palette = shuffle(palette);
+      rippleSize = 1;
+    }
+    // --- YOUR P5.JS CODE ENDS HERE ---
+    </script>
+</body>
+</html>
